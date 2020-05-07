@@ -1,0 +1,18 @@
+{
+  "name": "node-url-shortner",
+  "version": "1.0.0",
+  "description": "simple url shortner using express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.12",
+    "shortid": "^2.2.15"
+  }
+}

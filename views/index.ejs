@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+        table {
+            table-layout: fixed;
+            
+            word-wrap: break-word;
+        }
+    </style>
+    <title>Url Shortner</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Url Shortner</h1>
+        <form action="shortUrls" method="POST" class="my-4 form-inline">
+            <label for="fullUrl" class="sr-only">Url</label>
+            <input class="form-control col mr-2" type="url" name="fullUrl" placeholder="Url" required id="fullUrl">
+            <button type="submit" class="btn btn-success">Shrink</button>
+        </form>
+    </div>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Full Url</th>
+                    <th>Short Url</th>
+                    <th>Clicks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% shortUrls.forEach(shortUrl => { %>
+                <tr>
+                    <td> <a href="<%= shortUrl.full %> " target="_blank"
+                            rel="noopener noreferrer"><%= shortUrl.full %></a></td>
+                    <td> <a href="<%= shortUrl.short %>" target="_blank"
+                            rel="noopener noreferrer"><%= shortUrl.short %></a></td>
+                    <td><%= shortUrl.clicks %></td>
+                </tr>
+                <% })%>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
