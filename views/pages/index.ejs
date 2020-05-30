@@ -2,12 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+    <%- include('../partials/head'); -%>
     <style>
         table {
             table-layout: fixed;
@@ -19,6 +14,8 @@
 </head>
 
 <body>
+    <%- include('../partials/header'); -%>
+    
     <div class="container">
 
         <h1>Url Shortner</h1>
@@ -42,7 +39,7 @@
                 <tr>
                     <td> <a href="<%= shortUrl.full %> " target="_blank"
                             rel="noopener noreferrer"><%= shortUrl.full %></a></td>
-                    <td> <a href="<%= shortUrl.short %>" target="_blank"
+                    <td> <a href="shortUrls/<%= shortUrl.short %>" target="_blank"
                             rel="noopener noreferrer"><%= shortUrl.short %></a></td>
                     <td><%= shortUrl.clicks %></td>
                 </tr>
@@ -50,6 +47,8 @@
             </tbody>
         </table>
     </div>
+
+    <%- include('../partials/footer'); -%>
 </body>
 
 </html>
